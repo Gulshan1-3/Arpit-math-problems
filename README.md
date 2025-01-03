@@ -61,4 +61,23 @@ The goal of Gaussian elimination is to transform the matrix into this form, whic
 
 ### 6. **Pivoting in Gaussian Elimination**
 
-In Gaussian elimination, a 
+In Gaussian elimination, a **pivot** is an element used to eliminate the elements below it. In this code, pivoting is done by finding the first element in the current column that is greater than the tolerance (i.e., non-zero). The row containing this element is swapped with the current row, and the matrix is then transformed based on this pivot.
+
+The steps to perform pivoting are:
+1. For each column, find the first row where the absolute value of the element is greater than the tolerance.
+2. Swap the current row with this row to bring the pivot to the current position.
+3. Scale the pivot row so that the pivot element becomes 1.
+4. Eliminate the elements below the pivot by subtracting appropriate multiples of the pivot row from the other rows.
+
+### Code Logic
+
+1. **Input**: The function `can_unlock` takes a matrix of keys (representing a system of linear equations) and a tolerance value for floating-point comparisons.
+2. **Check for Empty Matrix**: If the matrix is empty (zero rows or zero columns), the function returns `false`.
+3. **Perform Gaussian Elimination**: The function iterates through each column, finding the pivot element and performing row swaps and eliminations until the matrix is in row echelon form.
+4. **Rank Determination**: The rank is determined by counting the number of rows that contain non-zero elements after the elimination process.
+5. **Unlock Condition**: The matrix can "unlock" if its rank equals the number of columns (i.e., it has full rank).
+
+### Conclusion
+
+This code utilizes **Gaussian elimination** to check whether a matrix has full rank, which indicates that the system of linear equations has a unique solution. The concepts of **pivoting**, **row echelon form**, **rank**, and **floating-point tolerance** are central to the implementation of the algorithm.
+
