@@ -66,9 +66,16 @@ fn main() {
         vec![0.0, 0.0, 1.000000001],
     ];
 
+    let keys4 = vec![
+        vec![2.0,1.0,3.0],
+        vec![-1.0,4.0,0.0],
+        vec![0.0,-2.0,1.0],
+    ];
+
     println!("Keys1 can unlock: {}", can_unlock(keys1, tolerance)); // Should print true
     println!("Keys2 can unlock: {}", can_unlock(keys2, tolerance)); // Should print false
     println!("Keys3 can unlock: {}", can_unlock(keys3, tolerance)); // Should print true
+    println!("Keys3 can unlock: {}", can_unlock(keys4, tolerance)); //Should print true 
 }
 
 
